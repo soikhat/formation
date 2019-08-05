@@ -1,0 +1,23 @@
+<?php
+
+//Implement hook_help
+function hello_help($route_name, Drupal\Core\Routing\RouteMatchInterface $route_match){
+  switch ($route_name) {
+    case 'help.page.hello':
+      return '<p>'.t('this is the hello help').'</p>';
+      break;
+  }
+
+}
+function hello_user_login(UserInterface $account){
+
+  $user = $account->getAccountName();
+  if ($user){
+    \Drupal::messenger()->addMessage(t('welcome dear %name', ['%name'=> $user]));
+  }
+
+}
+function hello_cron(){
+
+  \Drupal::messenger()->addMessage('this is a cron message','error');
+}
