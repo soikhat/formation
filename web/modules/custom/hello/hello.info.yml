@@ -1,0 +1,9 @@
+# module name
+name: Hello
+description: Module hello pour formation
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Trainning
+dependencies: 
+ -views: views
