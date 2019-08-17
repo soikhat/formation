@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\user\UserInterface;
+
 //Implement hook_help
 function hello_help($route_name, Drupal\Core\Routing\RouteMatchInterface $route_match){
   switch ($route_name) {
