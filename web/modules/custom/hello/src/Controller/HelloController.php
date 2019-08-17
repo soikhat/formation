@@ -8,7 +8,8 @@ class HelloController extends ControllerBase {
   public function content($param){
 
 
-    return ['#markup'=>t('you are on the Hello page. voici le parametre %param',['%param'=>$param])];
+    $name = $this-> currentUser()->getAccountName();
+    return ["#markup"=>t('Welcome to the Hello page Mr/Mrs %name <br> aux parametres %param',['%name'=>$name,'%param'=>$param])];
   }
 
 }
